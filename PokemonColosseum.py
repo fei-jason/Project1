@@ -136,13 +136,13 @@ while True:
         print(f"Team Rocket's {curr_enemy.name} cast '{curr_enemy_move[0].name}' to {curr_pokemon.name}")
         damage = get_damage(curr_enemy_move[0], curr_enemy, curr_pokemon)
         curr_pokemon.hp -= damage
-        time.sleep(1)
+        time.sleep(.2)
         print(f"Damage to {curr_pokemon.name} is {damage} points")
-        time.sleep(1)
+        time.sleep(.2)
         if curr_pokemon.hp <= 0:
             curr_pokemon.hp = 0
             print(f"Now {curr_enemy.name} has {curr_enemy.hp} HP and {curr_pokemon.name} faints back into pokeball")
-            time.sleep(1)
+            time.sleep(.2)
             if not player_pokemons:
                 # you lose
                 break
@@ -155,16 +155,16 @@ while True:
                 backup_moves.append(item)
 
             print(f"\nNext for Team {player_name}, {curr_pokemon.name} enters battle!")
-            time.sleep(1)
+            time.sleep(.2)
         else:
             print(f"Now {curr_enemy.name} has {curr_enemy.hp} HP and {curr_pokemon.name} has {curr_pokemon.hp} HP")
-            time.sleep(1)
+            time.sleep(.2)
         current_player = player_name
 
     # player side attacks
     else:
         print("")
-        time.sleep(1)
+        time.sleep(.2)
         print(f"Choose the moves for {curr_pokemon.name}:")
         
         for index, move in enumerate(available_moves):
@@ -186,11 +186,11 @@ while True:
 
         damage = get_damage(available_moves[curr_move_index], curr_pokemon, curr_enemy)
         print("")
-        time.sleep(1)
+        time.sleep(.2)
         print(f"Team {player_name}'s {curr_pokemon.name} cast '{available_moves[curr_move_index].name}' to {curr_enemy.name}")
-        time.sleep(1)
+        time.sleep(.2)
         print(f"Damage to {curr_enemy.name} is {damage} points")
-        time.sleep(1)
+        time.sleep(.2)
         available_moves.pop(curr_move_index)
         curr_enemy.hp -= damage
 
@@ -201,18 +201,18 @@ while True:
         if curr_enemy.hp <= 0:
             curr_enemy.hp = 0
             print(f"Now {curr_pokemon.name} has {curr_pokemon.hp} HP and {curr_enemy.name} faints back into pokeball")
-            time.sleep(1)
+            time.sleep(.2)
             if not enemy_pokemons:
                 # you win
                 winning_flag = 1
                 break
             curr_enemy = enemy_pokemons.pop()
             print(f"\nNext for Team Rocket, {curr_enemy.name} enters battle!")
-            time.sleep(1)
+            time.sleep(.2)
         else:
             # print(f"Now {curr_pokemon.name} has {curr_pokemon.hp} HP and {curr_enemy.name} has {curr_enemy.hp} HP")
             print(f"Now {curr_enemy.name} has {curr_enemy.hp} HP and {curr_pokemon.name} has {curr_pokemon.hp} HP")
-            time.sleep(1)
+            time.sleep(.2)
         current_player = "Rocket"
         
     if (not player_pokemons or not enemy_pokemons) and (curr_pokemon.hp < 0 or curr_enemy.hp < 0):

@@ -1,0 +1,7 @@
+## Introduction
+This is a simple python concept of a pokemon battle simulator. The pokemon and their corresponding moves will be read from a CSV file. The player and enemy will have 3 randomly assigned pokemons in a back and forth turned based battle. The player will be given a menu of moves to select for each pokemon they have. The one who defeats all their opponent's pokemon will win.
+
+## Usage
+- Download all of the files.
+- Open CMD on the folder with the files
+- Run `python PokemonColosseum.py' 
